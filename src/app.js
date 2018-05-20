@@ -24,6 +24,13 @@ const removeAll = () => {
     render();
 };
 
+const onMakeDecision = () => {
+    const randNumbr = Math.floor(Math.random() * app.options.length);
+    const option = app.options[randNumbr];
+    console.log(option);
+    render();
+};
+
 const render = () => {
     const template = (
         <div>
@@ -31,15 +38,21 @@ const render = () => {
             {app.subtitle && <p>{app.subtitle}</p>}
             {app.options.length > 0 ? <p>Here are your options</p> : <p>No options</p>}
 
-            <p>{app.options.length}</p>
+            <div className="form-group">
+                <button className="btn btn-primary" disabled={app.options.length === 0}
+                        onClick={onMakeDecision}>What should I do?</button>
+            </div>
+
             <ol>
-                <li>a</li>
-                <li>b</li>
-                <li>c</li>
+                {
+                    app.options.map((option) => {
+                        return <li key={option}>{option}</li>;
+                    })
+                }
             </ol>
 
             <div className="form-group">
-                <button type="submit" className="btn btn-primary" onClick={removeAll}>Remove all</button>
+                <button className="btn btn-primary" onClick={removeAll}>Remove all</button>
             </div>
 
             <form onSubmit={onFormSubmit}>
