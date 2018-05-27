@@ -9,7 +9,7 @@ const app = {
 };
 
 const onFormSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault(); // Prevents form submit and reload page
     const option = e.target.elements.option.value;
 
     if (option) {
