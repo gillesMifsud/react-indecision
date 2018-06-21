@@ -1,0 +1,2 @@
+If only renders jsx: use const functions
+set defaultProps
