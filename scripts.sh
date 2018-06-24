@@ -9,3 +9,6 @@ OLD : babel src/app.js --out-file=public/scripts/app.js --presets=env,react --wa
 NEW : npx babel src/app.js --out-file=public/scripts/app.js --presets=env,react --watch
 
 babel src/playground/es6-classes-1.js --out-file=public/scripts/app.js --presets=env,react --watch
+
+yarn run serve
+yarn run build
