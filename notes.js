@@ -1,4 +1,3 @@
 If only renders jsx: use const functions
 set defaultProps
-
-Ctrl + Shift + I = reformat
+lifecyclehooks : componentDidMount(), componentDidUpdate()

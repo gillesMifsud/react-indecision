@@ -6,14 +6,18 @@
   "license": "MIT",
   "scripts": {
     "serve": "live-server public/",
-    "build":"webpack --watch",
+    "build": "webpack --watch",
     "build-babel": "babel src/app.js --out-file=public/scripts/app.js --presets=env,react --watch"
   },
   "dependencies": {
-    "babel-cli": "6.24.1",
+    "babel-core": "6.26.3",
+    "babel-loader": "7.1.4",
     "babel-preset-env": "1.5.2",
     "babel-preset-react": "6.24.1",
     "live-server": "^1.2.0",
+    "react": "16.4.1",
+    "react-dom": "16.4.1",
+    "validator": "10.4.0",
     "webpack": "3.1.0"
   },
   "devDependencies": {}
