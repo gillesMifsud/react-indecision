@@ -1,5 +1,8 @@
 // Var inside template
-`Hi my name is ${this.name}`
+`Hi my name is ${this.name}`;
+
+// Converts to true a valid string, like 'test' and undefined as false
+!!'test' = true;
 
 //If only renders jsx: use const functions
 const Header = (props) => {
