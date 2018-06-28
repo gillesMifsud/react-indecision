@@ -23,8 +23,13 @@ export default class IndecisionApp extends React.Component {
     handlePick = () => {
         let randOption = Math.floor(Math.random() * this.state.options.length);
         const option = this.state.options[randOption];
-        alert(option);
+        this.setState(() => ({ selectedOption: option }));
     }
+    // OptionModal.js
+    handleClearSelectedOption = () => {
+        this.setState(() => ({ selectedOption: undefined }));
+    }
+
     handleAddOption = (option) => {
         if (!option) {
             return 'Enter valid value to add item';
@@ -78,13 +83,10 @@ export default class IndecisionApp extends React.Component {
                     handleAddOption={this.handleAddOption}
                 />
                 <OptionModal
-                    selectedOption={this.setState.selectedOption}
+                    selectedOption={this.state.selectedOption}
+                    handleClearSelectedOption={this.handleClearSelectedOption}
                 />
             </div>
         );
     }
 }
-
-IndecisionApp.defaultProps = {
-    options: ['option one']
-};
